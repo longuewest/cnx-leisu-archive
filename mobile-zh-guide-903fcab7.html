@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK体育 — 快速识别与通达</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #f4f2ed;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e1e1e;
+            line-height: 1.7;
+        }
+
+        /* 深色顶部横幅 — 杂志封面感 */
+        .hero {
+            background: #0f1117;
+            background-image: radial-gradient(circle at 30% 40%, #2a2e3a 0%, #0b0c10 90%);
+            color: #e7e3d9;
+            padding: 4rem 2rem 3.2rem;
+            text-align: center;
+            position: relative;
+            border-bottom: 6px solid #d8b250;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 300;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #e9dbb3;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            font-weight: 350;
+            opacity: 0.75;
+            border-top: 1px solid #4b4f5b;
+            display: inline-block;
+            padding-top: 0.8rem;
+            margin-top: 0.2rem;
+        }
+
+        /* 背景说明——放在 hero 下方浅色区顶部 */
+        .context-badge {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2rem 2rem 0.5rem;
+            font-size: 0.95rem;
+            color: #5a5f6b;
+            border-bottom: 1px dashed #d0cdc4;
+        }
+
+        .context-badge span {
+            background: #e9e5db;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #2f323b;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        /* 主要内容区块——三段自然介绍 */
+        .intro-grid {
+            max-width: 1000px;
+            margin: 2.5rem auto 1.5rem;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.2rem;
+        }
+
+        .intro-card {
+            background: #ffffffef;
+            padding: 1.8rem 2rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            border-left: 4px solid #c9b37b;
+        }
+
+        .intro-card h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            color: #1c1f28;
+            margin-bottom: 0.7rem;
+            letter-spacing: 0.5px;
+        }
+
+        .intro-card p {
+            margin-bottom: 0.9rem;
+            font-size: 1rem;
+            color: #2e3038;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-card a {
+            color: #8b6f3c;
+            text-decoration: none;
+            border-bottom: 1px solid #d1bc8f;
+            font-weight: 400;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .intro-card a:hover {
+            color: #4e3f21;
+            border-bottom-color: #4e3f21;
+        }
+
+        /* 强调色用于链接 */
+        .emphasis-link {
+            color: #9a7f4a;
+            font-weight: 450;
+            transition: 0.15s;
+        }
+
+        .emphasis-link:hover {
+            color: #3f341e;
+        }
+
+        /* FAQ摘要 / 附加段落 */
+        .faq-mini {
+            max-width: 780px;
+            margin: 2.2rem auto 3rem;
+            padding: 0 2rem;
+            background: #faf8f3;
+            border-radius: 10px;
+            padding: 1.6rem 2rem;
+        }
+
+        .faq-mini h3 {
+            font-size: 1.15rem;
+            font-weight: 430;
+            color: #1e212a;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.3px;
+        }
+
+        .faq-mini p {
+            font-size: 0.95rem;
+            color: #3d3f48;
+            margin-bottom: 0.7rem;
+        }
+
+        .faq-mini p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .faq-mini .hilite {
+            background: #e2daca;
+            padding: 0.1rem 0.3rem;
+            border-radius: 2px;
+        }
+
+        /* 页尾访问提示 */
+        .footer-note {
+            background: #1b1d26;
+            color: #b7b2a6;
+            text-align: center;
+            padding: 2rem 2rem 1.8rem;
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.4px;
+        }
+
+        .footer-note a {
+            color: #d9bf7c;
+            text-decoration: none;
+            border-bottom: 1px solid #5e543a;
+        }
+
+        .footer-note a:hover {
+            color: #f5e3b0;
+            border-bottom-color: #b69f64;
+        }
+
+        .footer-note .small-meta {
+            display: block;
+            margin-top: 0.6rem;
+            opacity: 0.55;
+            font-size: 0.75rem;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2.2rem; letter-spacing: 3px; }
+            .hero { padding: 2.8rem 1.2rem 2.2rem; }
+            .intro-card { padding: 1.5rem 1.2rem; }
+            .intro-grid { padding: 0 1.2rem; gap: 1.8rem; }
+            .faq-mini { padding: 1.2rem 1.2rem; margin-left: 1rem; margin-right: 1rem; }
+            .context-badge { padding: 1.5rem 1.2rem 0.2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.8rem; }
+            .intro-card h2 { font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 首页横幅 hero -->
+    <header class="hero">
+        <h1>MK体育</h1>
+        <div class="tagline">轻辨识 · 直达运动现场</div>
+    </header>
+
+    <!-- 背景说明：放在浅色区域入口 -->
+    <div class="context-badge">
+        <span>网站用途快速识别</span>
+        <p style="margin-top: 0.6rem; font-size: 0.95rem;">
+            这是一个专为移动端访问优化的体育信息聚合站点，不堆叠冗杂入口。当你需要快速判断一个体育平台是否契合自身需求时，<strong>MK体育</strong> 所提供的界面与栏目划分可作为直观参考。
+        </p>
+    </div>
+
+    <!-- 三段自然介绍 -->
+    <div class="intro-grid">
+        <div class="intro-card">
+            <h2>从用户视角出发</h2>
+            <p>
+                无论你关注足球、篮球还是综合赛事，打开 <a href="https://mobile-zh-mk.com">MK体育</a> 的第一感觉应当是清晰——没有过度营销的信息轰炸，主要模块一目了然。这符合多数人「先看结构，再决定是否深入」的使用习惯。
+            </p>
+            <p>
+                首页内容围绕赛事动态、数据参考与交互社区展开，但并非大而全的陈列，更强调常用功能的快速触达。这一点在移动端尤其重要：减少无意义跳转，让每次点击都有具体指向。
+            </p>
+        </div>
+
+        <div class="intro-card">
+            <h2>界面语言的克制</h2>
+            <p>
+                深色头部与浅色正文区形成自然的阅读节奏，没有高饱和度的视觉干扰。字体与间距偏向杂志排版的中性风格，帮助访客将注意力集中在信息本身而非装饰上。
+            </p>
+            <p>
+                链接采用暖金色作为强调色，与整体低对比背景协调一致。例如直接内嵌于句子中的 <a href="https://mobile-zh-mk.com">MK体育</a>，既保留导航功能，又不破坏段落连贯性。这种处理方式适合希望沉浸阅读又随时可跳转的用户。
+            </p>
+        </div>
+
+        <div class="intro-card">
+            <h2>适用场景与预期</h2>
+            <p>
+                如果你刚开始接触这类站点，或想换一个更轻量的浏览环境，MK体育 的首页布局能帮助你在 30 秒内建立基本认知：左侧（或顶部）为导航、中部为焦点赛事、底部为社区动态摘要。不需要注册即可预览大部分内容。
+            </p>
+            <p>
+                当然，每个平台都有自身定位，<a href="https://mobile-zh-mk.com">MK体育</a> 更适合那些希望快速获取赛事信息、同时不被过度推送干扰的用户。你可以将其看作一个信息起点，而非终点。
+            </p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 / 附加自然段落 -->
+    <div class="faq-mini">
+        <h3>常见疑问 · 简要</h3>
+        <p><span class="hilite">Q：</span> 这个网站主要针对哪个地区或语言？<br>
+        <span class="hilite">A：</span> 界面为中文，内容覆盖多类别体育赛事，侧重中文用户的阅读习惯与信息密度。</p>
+        <p><span class="hilite">Q：</span> 移动端适配情况如何？<br>
+        <span class="hilite">A：</span> 从布局与交互元素看，<a href="https://mobile-zh-mk.com" style="color:#8b6f3c;border-bottom:1px solid #d1bc8f;">MK体育</a> 在手机浏览器上可完整显示，菜单与卡片均根据屏幕宽度自动调整，不需要频繁缩放。</p>
+        <p><span class="hilite">Q：</span> 是否有独立的 App？<br>
+        <span class="hilite">A：</span> 当前通过移动端网页即可获得较完整的体验，无需额外安装。部分深度功能（如数据图表）在网页端已包含。</p>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <footer class="footer-note">
+        <p>识别 · 通达 · 不绕行</p>
+        <p style="margin-top: 0.4rem;">
+            若想直接了解当前结构与内容，可访问 <a href="https://mobile-zh-mk.com">MK体育</a> 首页。
+        </p>
+        <span class="small-meta">移动端中文体育信息索引</span>
+    </footer>
+
+</body>
+</html>
